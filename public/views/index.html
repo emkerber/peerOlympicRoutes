@@ -1,0 +1,47 @@
+<html ng-app="olympicAthletes">
+  <head>
+    <meta charset="utf-8">
+    <base href="/" />
+    <title>Olympic Routes Add On</title>
+    <script src="vendor/angular.min.js" charset="utf-8"></script>
+    <script src="vendor/angular-route/angular-route.min.js" charset="utf-8"></script>
+    <script src="js/client.js" charset="utf-8"></script>
+    <link rel="stylesheet" href="styles/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="styles/styles.css">
+  </head>
+  <body ng-controller="AthleteController as vm">
+    <div class="header">
+      <h1>Athlete Selection</h1>
+      <button class='btn btn-primary btn-sm' ng-click="vm.randomAll()">Randomize All</button>
+      <button class="btn btn-default btn-sm" ng-click="vm.testLog()">Test Log: Show Arrays and values</button><br />
+      Select Winner: <select ng-model="vm.selectedSport" ng-options="sport.sportDisplay for sport in vm.sportSelect track by sport.sportName"></select>
+    </div>
+    <div class="container-flex">
+
+      <div class="athlete-display__list">
+        <h4 class="athlete-display__header label-primary">View Sport</h4>
+        <div class="athlete-display__athlete" ng-repeat="(sport, athlete) in vm.randomAthleteList">
+          <a href="/athlete/{{sport}}" class="wide" ng-click="vm.setSportView(sport)"><button class="btn btn-danger btn-wide btn-lg" >{{athlete.sport}}</button></a>
+        </div>
+        <div class="view-display {{vm.sport}}" ng-view>
+
+        </div>
+      </div>
+
+      <div class="chosen-sport__display" ng-show="vm.selectedSport.show">
+        <h1 class="winner">Winner!</h1>
+        <div class="chosen-sport">
+          <img src="imgs/flag.gif" class="flag-gif flag-left" alt="">
+          <div class="chosen-sport-container">
+            <h2 class="chosen-sport__name">{{vm.randomAthleteList[vm.selectedSport.sportName].name}}</h2>
+            <p class="chosen-athlete__name">{{vm.randomAthleteList[vm.selectedSport.sportName].sport}}</p>
+            <p class="chosen-athlete__origin">{{vm.randomAthleteList[vm.selectedSport.sportName].origin}}</p>
+          </div>
+          <img src="imgs/flag.gif" class="flag-gif flag-right" alt="">
+        </div>
+        <img src="imgs/fireworks.gif" class="fireworks-gif flag-left" alt="">
+        <img src="imgs/fireworks.gif" class="fireworks-gif flag-right" alt="">
+      </div>
+    </div>
+  </body>
+</html>
