@@ -145,6 +145,7 @@
 
   function ArcheryController($scope) {
     const archeryvm = this;
+    console.log(this);
     archeryvm.imgurl = 'imgs/sports/archery.gif'
   }
   function CanoeController($scope) {
