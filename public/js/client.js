@@ -101,12 +101,12 @@
 
     }
 
-    function testLog() {
-      console.log('Full list:', vm.athletesList);
-      console.log('Random List:', vm.randomAthleteList);
-      console.log('selectedSport:', vm.selectedSport);
-      console.log('sportSelect', vm.sportSelect);
-    }
+    // function testLog() {
+    //   console.log('Full list:', vm.athletesList);
+    //   console.log('Random List:', vm.randomAthleteList);
+    //   console.log('selectedSport:', vm.selectedSport);
+    //   console.log('sportSelect', vm.sportSelect);
+    // }
 
     //button to call randomAthlete function on all sports
     function randomAll() {

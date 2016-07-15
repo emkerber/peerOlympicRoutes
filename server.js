@@ -13,6 +13,8 @@ app.use(express.static('public'));
 //Routers
 app.use('/', index);
 app.use('/olympics', olympics)
+app.get('/*', index);
+
 
 //Server Listener
 var server = app.listen(process.env.PORT || 3000, function() {

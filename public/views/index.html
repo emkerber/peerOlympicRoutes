@@ -1,15 +1,24 @@
-<html ng-app="olympicAthletes">
+<html ng-app="routeApp">
   <head>
     <meta charset="utf-8">
-    <base href="/" />
     <title>Olympic Routes Add On</title>
     <script src="vendor/angular.min.js" charset="utf-8"></script>
     <script src="vendor/angular-route/angular-route.min.js" charset="utf-8"></script>
-    <script src="js/client.js" charset="utf-8"></script>
+    <!-- <script src="js/client.js" charset="utf-8"></script> -->
+    <script src="js/routeApp.module.js"></script>
+    <script src="js/routeApp.config.js"></script>
+    <script src="js/ArcheryController.js"></script>
+    <script src="js/CanoeController.js"></script>
+    <script src="js/ModernPentathlonController.js"></script>
+    <script src="js/TableTennisController.js"></script>
+    <script src="js/TaekwondoController.js"></script>
+    <script src="js/DataService.js"></script>
     <link rel="stylesheet" href="styles/bootstrap/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="styles/styles.css">
+    <base href="/" />
   </head>
-  <body ng-controller="AthleteController as vm">
+  <body>
+  <!-- <body ng-controller="AthleteController as vm"> -->
     <div class="header">
       <h1>Athlete Selection</h1>
       <button class='btn btn-primary btn-sm' ng-click="vm.randomAll()">Randomize All</button>
@@ -20,9 +29,13 @@
 
       <div class="athlete-display__list">
         <h4 class="athlete-display__header label-primary">View Sport</h4>
-        <div class="athlete-display__athlete" ng-repeat="(sport, athlete) in vm.randomAthleteList">
-          <a href="/athlete/{{sport}}" class="wide" ng-click="vm.setSportView(sport)"><button class="btn btn-danger btn-wide btn-lg" >{{athlete.sport}}</button></a>
-        </div>
+
+        <a href="/archery"><button class="sports">Archery</button></a>
+        <a href="/canoe"><button class="sports">Canoe</button></a>
+        <a href="/modernpentathlon"><button class="sports">Modern Pentathlon</button></a>
+        <a href="/tabletennis"><button class="sports">Table Tennis</button></a>
+        <a href="/taekwondo"><button class="sports">Taekwondo</button></a>
+
         <div class="view-display {{vm.sport}}" ng-view>
 
         </div>
