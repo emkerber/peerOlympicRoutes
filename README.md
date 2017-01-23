@@ -13,6 +13,8 @@ Below are the original instructions.
 
 # Angular Challenge
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/emkerber/peerOlympicRoutes.svg)](https://greenkeeper.io/)
+
 ALL RIGHT! Set up a *NEW* project! From the ground up.
 Bring in Angular, that's all we will need for our project today.
 
